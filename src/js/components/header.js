@@ -4,11 +4,13 @@ class Header {
     constructor(element){
         this.element = element;
         this.bag = this.element.querySelector('[data-number]');
+        this.closeButton = this.element.querySelector('[data-close]');
         this.bind();
     }
 
     bind(){
         this.bag.addEventListener('click', this.open.bind(this));
+        this.closeButton.addEventListener('click', this.close.bind(this));
         events.subscribe('UPDATE_CART', this.updateNumber.bind(this));
     }
 

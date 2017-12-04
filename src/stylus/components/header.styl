@@ -1,12 +1,14 @@
 .header
+    background-color: #fff
     width: 100%
     display: flex
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
     justify-content: flex-end
+    position: fixed
+    z-index: 2
 
     &.open
         height: 100%
-        position: absolute
         background: #1b1a21
         display: block
         z-index 2
@@ -34,6 +36,26 @@
 
         .cart
             display: block
+
+        .close
+            display: block
+            background: none
+            padding: 0
+            font-size: 0
+            border: none
+            position: absolute
+            left: 20px
+            top: 20px
+
+            svg
+                width: 30px
+                height: 30px
+
+                path
+                    fill: #fff
+
+    .close
+        display: none
 
     .cart-button
         display: block
