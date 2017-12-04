@@ -1,10 +1,20 @@
-import Map from "./components/map.js";
+import ProductList from './components/product-list';
+import Cart from './components/cart';
+import Header from './components/header';
+import Total from './components/total';
 
-const location = 1000;
+import service from './components/service';
 
-const getMap = () => {
-    let map = new Map();
-    console.log(location, map)
-}
+const productListEl = document.querySelector('[data-product-list]');
+const carEl = document.querySelector('[data-cart]');
+const headerEl = document.querySelector('[data-header]');
+const totalEL = document.querySelector('[data-total]');
 
-getMap();
+service('./public/data/products.json')
+    .then((data) => {
+        new ProductList(data, productListEl)
+    })
+
+new Cart(carEl)
+new Header(headerEl)
+new Total(totalEL)

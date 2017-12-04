@@ -8,120 +8,25 @@
     <link rel="stylesheet" href="./dist/main.css">
 </head>
 <body>
-    <header class="header open">
-        <button class="cart-button" data-number="3">
+    <header class="header" data-header>
+        <button class="cart-button" data-number="0">
             <svg viewBox="0 0 489 489">
                 <path d="M440.1 422.7l-28-315.3c-.6-7-6.5-12.3-13.4-12.3h-57.6C340.3 42.5 297.3 0 244.5 0s-95.8 42.5-96.6 95.1H90.3c-7 0-12.8 5.3-13.4 12.3l-28 315.3c0 .4-.1.8-.1 1.2 0 35.9 32.9 65.1 73.4 65.1h244.6c40.5 0 73.4-29.2 73.4-65.1 0-.4 0-.8-.1-1.2zM244.5 27c37.9 0 68.8 30.4 69.6 68.1H174.9c.8-37.7 31.7-68.1 69.6-68.1zm122.3 435H122.2c-25.4 0-46-16.8-46.4-37.5l26.8-302.3h45.2v41c0 7.5 6 13.5 13.5 13.5s13.5-6 13.5-13.5v-41h139.3v41c0 7.5 6 13.5 13.5 13.5s13.5-6 13.5-13.5v-41h45.2l26.9 302.3c-.4 20.7-21.1 37.5-46.4 37.5z"/>
             </svg>
         </button>
         <div class="cart">
-            <ul class="cart-product-list">
-                <li class="cart-product">
-                    <div class="img-holder">
-                        <img src="http://via.placeholder.com/50x50" />
-                    </div>
-                    <div class="holder">
-                        <span class="name">Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</span>
-                        <div class="row">
-                            <div class="info">
-                                <span class="property">GGG | Preto e branco</span>
-                                <span class="amount">Quantidade: 1</span>
-                            </div>
-                            <span class="price">R$ 149,90</span>
-                        </div>
-                        <button class="close">
-                            <svg viewBox="0 0 512 512"><title/><path d="M507.33 411.33c0-.002-.003-.004-.005-.005L352.003 256l155.322-155.325.006-.005c1.673-1.673 2.882-3.627 3.657-5.708 2.123-5.688.912-12.34-3.662-16.915L433.952 4.674C429.378.1 422.727-1.11 417.038 1.014c-2.08.775-4.035 1.984-5.71 3.655 0 0 0 .002-.003.004L256 160 100.678 4.675l-.005-.005C99 3 97.045 1.79 94.965 1.015c-5.69-2.124-12.34-.913-16.915 3.66L4.676 78.05c-4.574 4.573-5.784 11.225-3.66 16.913C1.79 97.043 3 99 4.67 100.67l.006.006L160 256 4.677 411.326c0 .002-.003.003-.004.005-1.67 1.674-2.88 3.628-3.657 5.708-2.124 5.688-.913 12.34 3.66 16.915l73.375 73.373c4.575 4.574 11.226 5.784 16.915 3.66 2.08-.775 4.035-1.984 5.708-3.655l.005-.004L256.002 352l155.324 155.326c.002 0 .004.003.006.004 1.674 1.672 3.627 2.88 5.707 3.657 5.688 2.123 12.34.913 16.913-3.66l73.373-73.375c4.574-4.574 5.785-11.227 3.662-16.915-.776-2.08-1.985-4.034-3.657-5.707z"/></svg>
-                        </button> 
-                    </div>
-                </li>
-                <li class="cart-product">
-                        <div class="img-holder">
-                            <img src="http://via.placeholder.com/50x50" />
-                        </div>
-                        <div class="holder">
-                            <span class="name">Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</span>
-                            <div class="row">
-                                <div class="info">
-                                    <span class="property">GGG | Preto e branco</span>
-                                    <span class="amount">Quantidade: 1</span>
-                                </div>
-                                <span class="price">R$ 149,90</span>
-                            </div>
-                            <button class="close">
-                                <svg viewBox="0 0 512 512"><title/><path d="M507.33 411.33c0-.002-.003-.004-.005-.005L352.003 256l155.322-155.325.006-.005c1.673-1.673 2.882-3.627 3.657-5.708 2.123-5.688.912-12.34-3.662-16.915L433.952 4.674C429.378.1 422.727-1.11 417.038 1.014c-2.08.775-4.035 1.984-5.71 3.655 0 0 0 .002-.003.004L256 160 100.678 4.675l-.005-.005C99 3 97.045 1.79 94.965 1.015c-5.69-2.124-12.34-.913-16.915 3.66L4.676 78.05c-4.574 4.573-5.784 11.225-3.66 16.913C1.79 97.043 3 99 4.67 100.67l.006.006L160 256 4.677 411.326c0 .002-.003.003-.004.005-1.67 1.674-2.88 3.628-3.657 5.708-2.124 5.688-.913 12.34 3.66 16.915l73.375 73.373c4.575 4.574 11.226 5.784 16.915 3.66 2.08-.775 4.035-1.984 5.708-3.655l.005-.004L256.002 352l155.324 155.326c.002 0 .004.003.006.004 1.674 1.672 3.627 2.88 5.707 3.657 5.688 2.123 12.34.913 16.913-3.66l73.373-73.375c4.574-4.574 5.785-11.227 3.662-16.915-.776-2.08-1.985-4.034-3.657-5.707z"/></svg>
-                            </button>
-                        </div>
-                    </li>
-            </ul>
-            <div class="total">
+            <ul class="cart-product-list" data-cart></ul>
+            <div class="total show" data-total>
                 <div class="row">
                     <span class="text">Subtotal</span>
-                    <div class="price-holder">
-                        <span class="price">R$ <span>149</span>,90</span>
-                        <span class="installments">Ou em até 10x R$ 37,97</span>
-                    </div>
+                    <div class="price-holder" data-price></div>
                 </div>
                 <button class="buy-button">Comprar</button>
             </div>
         </div>
     </header>
     <main class="content">
-        <ul class="product-list">
-            <li class="product">
-                <div class="img-holder">
-                    <img src="http://via.placeholder.com/180x230" />
-                </div>
-                <span class="name">Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</span>
-                <span class="price">R$ <span>149</span>,90</span>
-                <span class="installments">ou 3x R$ 25,00</span>
-                <button class="add-cart">Adicionar ao carrinho</button>
-            </li>
-            <li class="product">
-                <div class="img-holder">
-                    <img src="http://via.placeholder.com/180x230" />
-                </div>
-                <span class="name">Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</span>
-                <span class="price">R$ <span>149</span>,90</span>
-                <span class="installments">ou 3x R$ 25,00</span>
-                <button class="add-cart">Adicionar ao carrinho</button>
-            </li>
-            <li class="product">
-                <div class="img-holder">
-                    <img src="http://via.placeholder.com/180x230" />
-                </div>
-                <span class="name">Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</span>
-                <span class="price">R$ <span>149</span>,90</span>
-                <span class="installments">ou 3x R$ 25,00</span>
-                <button class="add-cart">Adicionar ao carrinho</button>
-            </li>
-            <li class="product">
-                <div class="img-holder">
-                    <img src="http://via.placeholder.com/180x230" />
-                </div>
-                <span class="name">Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</span>
-                <span class="price">R$ <span>149</span>,90</span>
-                <span class="installments">ou 3x R$ 25,00</span>
-                <button class="add-cart">Adicionar ao carrinho</button>
-            </li>
-            <li class="product">
-                <div class="img-holder">
-                    <img src="http://via.placeholder.com/180x230" />
-                </div>
-                <span class="name">Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</span>
-                <span class="price">R$ <span>149</span>,90</span>
-                <span class="installments">ou 3x R$ 25,00</span>
-                <button class="add-cart">Adicionar ao carrinho</button>
-            </li>
-            <li class="product">
-                <div class="img-holder">
-                    <img src="http://via.placeholder.com/180x230" />
-                </div>
-                <span class="name">Chuteira Nike Mercurial Victory 3 FG - Edição Especial Infantil</span>
-                <span class="price">R$ <span>149</span>,90</span>
-                <span class="installments">ou 3x R$ 25,00</span>
-                <button class="add-cart">Adicionar ao carrinho</button>
-            </li>
-        </ul>
+        <ul class="product-list" data-product-list></ul>
     </main>
     <script src="./dist/bundle.js"></script>
 </body>
