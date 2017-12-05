@@ -9,7 +9,7 @@ class ProductList {
     }
 
     render(){
-        this.element.innerHTML = "";
+        this.element.innerHTML = '';
         this.element.insertAdjacentHTML('afterbegin', template_productList(this.data));
         this.bind();
     }
@@ -18,7 +18,7 @@ class ProductList {
         let itens = this.element.querySelectorAll('[data-product]');
         [].forEach.call(itens, (el, index) => {
             new Product(el, this.data[index]);
-        })
+        });
     }
 }
 

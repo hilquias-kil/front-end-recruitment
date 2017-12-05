@@ -4,25 +4,25 @@
     position: relative
 
     &:before
-        display: block
+        background: $black-color
         content: ""
-        height: 2px 
-        background: #000000
-        position: absolute
-        width: calc(unquote('100% - 40px'))
+        display: block
+        height: 2px
         left: 50%
+        position: absolute
         top: -1px
         transform: translateX(-50%)
+        width: calc(unquote('100% - 40px'))
 
     .holder
+        flex-grow: 1
         margin-left: 20px
         position: relative
-        flex-grow: 1
 
     .name
-        color: #fff
-        font-size: 14px
+        color: $white-color
         display: block
+        font-size: 14px
         margin: 0 25px 5px 0
     
     .row
@@ -31,27 +31,33 @@
 
     .property,
     .amount
+        color: $gray-color
         display: block
         font-size: 12px
-        color: #7f7f7f
         margin: 0 0 5px
 
     .price
+        color: $highlight-color
         font-size: 14px
-        color: #ecbf04
+        margin-top: 5px
 
     .remove
-        padding: 0
-        font-size: 0
         background: none
-        border: none
+        border: 0
+        font-size: 0
+        padding: 0
         position: absolute
         right: 0
         top: 0
 
+        &:hover
+            svg
+                path
+                    fill: $white-color
+
         svg
-            width: 18px
             height: 18px
+            width: 18px
 
             path
-                fill: #000
+                fill: $black-color

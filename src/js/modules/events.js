@@ -23,7 +23,7 @@ class Events {
 
       // Cycle through topics queue, fire!
       topics[topic].forEach(function(item) {
-            item(info != undefined ? JSON.parse(JSON.stringify(info)) : {});
+            item(info ? JSON.parse(JSON.stringify(info)) : {});
       });
     }
 }

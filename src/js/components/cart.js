@@ -1,5 +1,5 @@
 import template_cartProduct from '../templates/template-cart-product';
-import events from './events.js';
+import events from '../modules/events.js';
 
 class Cart {
     constructor(el){
@@ -18,14 +18,14 @@ class Cart {
             return equal;
         });
 
-        if(res.length){
-            this.data[index].qtd += 1; 
+        if (res.length) {
+            this.data[index].qtd += 1;
         } else {
             item.qtd = 1;
-            this.data.push(item)
+            this.data.push(item);
         }
-       
-        this.render()
+
+        this.render();
     }
 
     removeProduct(index){
@@ -34,7 +34,7 @@ class Cart {
     }
 
     render(){
-        this.element.innerHTML = "";
+        this.element.innerHTML = '';
         this.element.insertAdjacentHTML('afterbegin', template_cartProduct(this.data));
         this.bind();
 
@@ -44,8 +44,8 @@ class Cart {
     bind(){
         let rm = this.element.querySelectorAll('[data-remove]');
         [].forEach.call(rm, (el, index) => {
-            el.addEventListener('click', this.removeProduct.bind(this, index))
-        })
+            el.addEventListener('click', this.removeProduct.bind(this, index));
+        });
     }
 }
 

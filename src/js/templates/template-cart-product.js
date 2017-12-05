@@ -19,4 +19,4 @@ ${ data.map( item => `
     </div>
 </li>
 `).join('')}
-`
+`;

@@ -1,30 +1,30 @@
 .product
-    text-align: center
+    box-sizing: border-box
     max-width 240px
     padding: 20px
-    box-sizing: border-box
     position: relative
+    text-align: center
 
     .free-shipping
-        background-color: #ebbe00
-        font-size: 10px
-        color: #fff
-        padding: 5px
+        background-color: $highlight-color
+        color: $white-color
         display: inline-block
+        font-size: 12px
+        padding: 5px
         position: absolute
         right: 0
         top: 0
 
     .img-holder
-        width: 180px
         height: 230px
         margin: 0 auto 10px
         position: relative
+        width: 180px
     
-    .name 
+    .name
         display: block
-        margin-bottom: 15px
         font-size: 14px
+        margin-bottom: 15px
 
     .price
         display: block
@@ -32,52 +32,52 @@
         position: relative
 
         &:before
+            background-color: $highlight-color
             content: ""
             display: inline-block
-            width: 15px
             height: 2px
-            background-color: #ebbe00
-            position: absolute
             left 50%
+            position: absolute
             top: -5px
             transform: translateX(-50%)
+            width: 15px
 
         span
             font-size: 24px
             font-weight: bold
 
     .installments
+        color: $gray-color
         display: block
-        font-size: 12px
-        color: #9e9e9e
+        font-size: 14px
 
     .select
-        margin: 15px 0 10px
-        border: 1px solid #ccc
-        display: inline-block
-        position: relative
+        border: 1px solid $gray-color
         border-radius: 3px
+        display: inline-block
+        margin: 15px 0 10px
+        position: relative
 
         &:before
             content: ""
-            triangle( down, 6px, black )
+            position: absolute
             right: 10px
             top: 50%
-            position: absolute
             transform: translateY(-3px)
+            triangle( down, 6px, black )
 
         select
-            font-size: 12px
             appearance: none
-            border: none
+            border: 0
+            font-size: 12px
             padding: 10px
             padding-right: 32px;
 
     .add-cart
-        background-color: #000000
-        color: #fff
-        border: none
-        padding: 10px 20px
+        background-color: $black-color
+        border: 0
+        color: $white-color
         font-size: 12px
-        text-transform: uppercase
         font-weight: bold
+        padding: 10px 20px
+        text-transform: uppercase

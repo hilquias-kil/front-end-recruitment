@@ -3,7 +3,7 @@ import Cart from './components/cart';
 import Header from './components/header';
 import Total from './components/total';
 
-import service from './components/service';
+import service from './modules/service';
 
 const productListEl = document.querySelector('[data-product-list]');
 const carEl = document.querySelector('[data-cart]');

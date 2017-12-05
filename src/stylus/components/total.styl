@@ -1,6 +1,6 @@
 .total
-    padding: 20px
     display: none
+    padding: 20px
 
     &.show
         display: block
@@ -11,26 +11,30 @@
         margin: 0 0 20px
 
     .text
-        color: #7f7f7f
+        color: $gray-color
         text-transform: uppercase
 
     .price
-        font-size: 24px
+        color: $highlight-color
         display: block
+        font-size: 24px
         text-align: right
-        color: #ecbf04
+
+        span
+            font-weight: bold
 
     .installments
-        font-size: 14px
+        color: $gray-color
+        font-size: 12px
         text-transform: uppercase
-        color: #7f7f7f
 
     .buy-button
-        background-color: #000
-        display: block
-        padding: 15px 20px
+        background-color: $black-color
         border: 0
-        width: 100%
+        color: $white-color
+        display: block
+        font-size: 14px
         font-weight: bold
+        padding: 15px 20px
         text-transform: uppercase
-        color: #fff
+        width: 100%

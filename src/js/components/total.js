@@ -1,4 +1,4 @@
-import events from './events.js';
+import events from '../modules/events.js';
 import template_total from '../templates/template-total';
 
 class Total {
@@ -10,9 +10,9 @@ class Total {
     }
 
     update(products){
-        if(products.length){
+        if (products.length) {
             this.show();
-            this.render(products)
+            this.render(products);
         } else {
             this.hide();
         }
@@ -30,8 +30,8 @@ class Total {
         let total = products
             .map((item)=> item.price * item.qtd)
             .reduce((a, b) => a + b);
-        
-         this.holder.innerHTML = "";
+
+         this.holder.innerHTML = '';
          this.holder.insertAdjacentHTML('afterbegin', template_total(total));
     }
 }

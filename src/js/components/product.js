@@ -1,10 +1,10 @@
-import events from './events'
+import events from '../modules/events';
 
 class Product {
     constructor(el, data){
         this.el = el;
         this.data = data;
-        this.feedBack = this.el.dataset.feedback ? this.el.dataset.feedback : "";
+        this.feedBack = this.el.dataset.feedback ? this.el.dataset.feedback : '';
         this.bind();
     }
 
@@ -18,7 +18,7 @@ class Product {
     }
 
     addToCart(){
-        if(this.data.size){
+        if (this.data.size) {
             events.publish('ADD_CART', this.data);
         } else {
             events.publish('FEEDBACK_FAIL', this.feedBack);

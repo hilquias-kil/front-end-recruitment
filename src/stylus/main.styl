@@ -1,17 +1,26 @@
 @import "../../node_modules/kouto-swiss/"
 normalize()
 
+@import "./config/*"
 @import "./components/*"
 
 body
-    color: #2e2d33
-    font-family: Trebuchet ms, sans-serif
+    color: $text-color
+    font-family: 'Open Sans', sans-serif;
 
     button
-        font-family: Trebuchet ms, sans-serif
         cursor: pointer
+        font-family: 'Open Sans', sans-serif;
 
 .content
-    max-width: 730px
     margin: 0 auto
     padding-top: 65px
+
+    +media-query( screen, min-width 480px )
+        max-width: 480px
+
+    +media-query( screen, min-width 720px )
+        max-width: 720px
+    
+    +media-query( screen, min-width 960px )
+        max-width: 960px

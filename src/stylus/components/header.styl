@@ -1,93 +1,94 @@
 .header
-    background-color: #fff
-    width: 100%
+    background-color: $white-color
+    box-shadow: 0 0 10px rgba($black-color, .5)
     display: flex
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
     justify-content: flex-end
     position: fixed
+    width: 100%
     z-index: 2
 
     &.open
-        height: 100%
-        background: #1b1a21
+        background: $cart-bg-color
         display: block
-        z-index 2
+        height: 100%
         max-width: 520px
-        top: 0
         right: 0
+        top: 0
+        z-index 2
 
         .cart-button
             margin: 40px auto
+
             &:after
-                display: inline-block
-                vertical-align: middle
+                color: $white-color
                 content: "Sacola"
-                color: #fff
-                text-transform: uppercase
+                display: inline-block
                 font-size: 24px
                 margin-left: 5px
+                text-transform: uppercase
+                vertical-align: middle
 
             svg
                 display: inline-block
                 vertical-align: middle
 
                 path
-                    fill: #fff
+                    fill: $white-color
 
         .cart
             display: block
 
         .close
-            display: block
             background: none
-            padding: 0
+            border: 0
+            display: block
             font-size: 0
-            border: none
-            position: absolute
             left: 20px
+            padding: 0
+            position: absolute
             top: 20px
 
             svg
-                width: 30px
                 height: 30px
+                width: 30px
 
                 path
-                    fill: #fff
+                    fill: $white-color
 
     .close
         display: none
 
     .cart-button
+        background: none
+        border: 0
         display: block
+        font-size: 12px
+        font-weight: bold
+        line-height: 18px
         margin: 10px
         padding: 0
-        border: none
-        background: none
         position: relative
-        font-size: 12px
-        line-height: 18px
         text-align: center
-        font-weight: bold
 
         &:before
+            background-color: $highlight-color
+            border-radius: 50%
+            bottom: -5px
             content: attr(data-number)
             display: inline-block
-            background-color: #edbd01
-            width: 18px
             height: 18px
-            position: absolute
             left: -5px
-            bottom: -5px
-            border-radius: 50%
+            position: absolute
+            width: 18px
 
         svg
-            width: 40px
             height: 40px
+            width: 40px
 
     .cart
         display: none
 
         .cart-product-list
+            list-style: none
             margin: 0
             padding: 0
-            list-style: none  
