@@ -27,12 +27,15 @@ class Total {
     }
 
     render(products){
-        let total = products
+        let rendered = template_total(this.totalPrice(products));
+        this.holder.innerHTML = '';
+        this.holder.insertAdjacentHTML('afterbegin', rendered);
+    }
+
+    totalPrice(products){
+        return products
             .map((item)=> item.price * item.qtd)
             .reduce((a, b) => a + b);
-
-         this.holder.innerHTML = '';
-         this.holder.insertAdjacentHTML('afterbegin', template_total(total));
     }
 }
 

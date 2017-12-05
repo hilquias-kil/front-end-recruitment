@@ -24,7 +24,8 @@ class Header {
 
     updateNumber(list){
         let qtd = list.length ? list.map((a) => a.qtd).reduce((a, b) => a + b) : 0;
-        this.bag.dataset.number = qtd;
+        if(this.bag.dataset) this.bag.dataset.number = qtd;
+        return qtd;
     }
 }
 

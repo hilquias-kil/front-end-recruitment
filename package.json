@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run css-watch & npm run js-watch & npm run server",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=test jest",
     "js": "rollup --config",
     "js-watch": "rollup -w --config",
     "js-lint": "eslint src/js/**/*.js",
@@ -13,6 +13,9 @@
     "css-watch": "stylus -c -w src/stylus --out dist/",
     "css-lint": "stylint src/stylus/",
     "server": "browser-sync start --server --files \"dist/*.css, dist/*js, index.html\""
+  },
+  "jest": {
+    "verbose": true
   },
   "repository": {
     "type": "git",
@@ -26,11 +29,14 @@
   "homepage": "https://github.com/hilquias-kil/front-end-recruitment#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.18.13",
     "eslint": "^4.12.1",
+    "jest": "^21.2.1",
     "kouto-swiss": "^1.1.0",
+    "regenerator-runtime": "^0.11.0",
     "rollup": "^0.52.0",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-uglify": "^2.0.1",

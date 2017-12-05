@@ -34,10 +34,11 @@ class Cart {
     }
 
     render(){
-        this.element.innerHTML = '';
-        this.element.insertAdjacentHTML('afterbegin', template_cartProduct(this.data));
-        this.bind();
-
+        if(this.element){
+            this.element.innerHTML = '';
+            this.element.insertAdjacentHTML('afterbegin', template_cartProduct(this.data));
+            this.bind();
+        }
         events.publish('UPDATE_CART', this.data);
     }
 
