@@ -1,16 +1,14 @@
 import events from '../modules/events.js';
 import template_total from '../templates/template-total';
+import storage from '../modules/storage.js';
 
 class Total {
     constructor(element){
         this.element = element;
         this.holder = this.element.querySelector('[data-price]');
+        this.update(storage.get('dbProducts'));
 
         events.subscribe('UPDATE_CART', this.update.bind(this));
-
-        if(localStorage && localStorage.getItem('dbProducts')){
-            this.update(JSON.parse(localStorage.getItem('dbProducts')))
-        }
     }
 
     update(products){

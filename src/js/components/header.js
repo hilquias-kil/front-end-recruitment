@@ -1,5 +1,5 @@
 import events from '../modules/events.js';
-import { setTimeout } from 'timers';
+import storage from '../modules/storage.js';
 
 class Header {
     constructor(element){
@@ -8,13 +8,12 @@ class Header {
         this.closeButton = this.element.querySelector('[data-close]');
         this.bind();
 
-        if(localStorage && localStorage.getItem('dbProducts')){
-            this.updateNumber(JSON.parse(localStorage.getItem('dbProducts')))
-        }
+        this.updateNumber(storage.get('dbProducts'));
     }
 
     bind(){
         this.bag.addEventListener('click', this.open.bind(this));
+        this.bag.addEventListener('animationend', () => this.bag.classList.remove('change'));
         this.closeButton.addEventListener('click', this.close.bind(this));
         events.subscribe('UPDATE_CART', this.updateNumber.bind(this));
     }
@@ -29,7 +28,7 @@ class Header {
 
     updateNumber(list){
         let qtd = list.length ? list.map((a) => a.qtd).reduce((a, b) => a + b) : 0;
-        if(this.bag.dataset) {
+        if (this.bag.dataset) {
             this.bag.dataset.number = qtd;
             this.animate();
         }
@@ -38,7 +37,6 @@ class Header {
 
     animate(){
         this.bag.classList.add('change');
-        window.setTimeout(() => this.bag.classList.remove('change'), 1000)
     }
 }
 

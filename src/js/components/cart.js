@@ -1,15 +1,12 @@
 import template_cartProduct from '../templates/template-cart-product';
 import events from '../modules/events.js';
+import storage from '../modules/storage.js';
 
 class Cart {
     constructor(el){
-        this.data = [];
+        this.data = storage.get('dbProducts');
         this.element = el;
-
-        if(localStorage && localStorage.getItem('dbProducts')){
-            this.data = JSON.parse(localStorage.getItem('dbProducts'))
-            this.render();
-        }
+        this.render();
 
         events.subscribe('ADD_CART', this.addProduct.bind(this));
     }
@@ -41,7 +38,7 @@ class Cart {
     }
 
     render(){
-        if(this.element){
+        if (this.element) {
             this.element.innerHTML = '';
             this.element.insertAdjacentHTML('afterbegin', template_cartProduct(this.data));
             this.bind();
@@ -57,9 +54,7 @@ class Cart {
     }
 
     updateStorage(){
-        if(localStorage){
-            localStorage.setItem('dbProducts', JSON.stringify(this.data))
-        }
+        storage.set('dbProducts', this.data);
     }
 }
 
