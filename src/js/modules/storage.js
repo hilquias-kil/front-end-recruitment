@@ -1,5 +1,9 @@
 const get = (name) => {
-    return localStorage ? JSON.parse(localStorage.getItem(name)) : [];
+    if (localStorage) {
+        let data = localStorage.getItem(name);
+        return data ? JSON.parse(data) : [];
+    }
+    return [];
 };
 
 const set = (name, data) => {

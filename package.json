@@ -17,7 +17,9 @@
   },
   "jest": {
     "verbose": true,
-    "setupFiles": ["jest-localstorage-mock"]
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
   },
   "repository": {
     "type": "git",

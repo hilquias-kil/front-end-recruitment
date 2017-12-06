@@ -5,16 +5,11 @@ import Total from './components/total';
 
 import service from './modules/service';
 
-const productListEl = document.querySelector('[data-product-list]');
-const carEl = document.querySelector('[data-cart]');
-const headerEl = document.querySelector('[data-header]');
-const totalEL = document.querySelector('[data-total]');
-
 service('./public/data/products.json')
     .then((data) => {
-        new ProductList(data, productListEl)
+        new ProductList(data, document.querySelector('[data-product-list]'))
     })
 
-new Cart(carEl)
-new Header(headerEl)
-new Total(totalEL)
+new Cart(document.querySelector('[data-cart]'))
+new Header(document.querySelector('[data-header]'))
+new Total(document.querySelector('[data-total]'))
