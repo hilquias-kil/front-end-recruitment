@@ -4,25 +4,24 @@ class Product {
     constructor(el, data){
         this.el = el;
         this.data = data;
-        this.feedBack = this.el.dataset.feedback ? this.el.dataset.feedback : '';
+
+        this.buttonAdd =  this.el.querySelector('[data-add]');
+        this.select = this.el.querySelector('[data-select]');
+
+        this.data.size = this.select.value;
+
         this.bind();
     }
 
     bind(){
-        this.el
-            .querySelector('[data-add]')
+        this.buttonAdd
             .addEventListener('click', this.addToCart.bind(this));
-        this.el
-            .querySelector('[data-select]')
+        this.select
             .addEventListener('change', this.selectSize.bind(this));
     }
 
     addToCart(){
-        if (this.data.size) {
-            events.publish('ADD_CART', this.data);
-        } else {
-            events.publish('FEEDBACK_FAIL', this.feedBack);
-        }
+        if (this.data.size) events.publish('ADD_CART', this.data);
     }
 
     selectSize(e){

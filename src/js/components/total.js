@@ -7,6 +7,10 @@ class Total {
         this.holder = this.element.querySelector('[data-price]');
 
         events.subscribe('UPDATE_CART', this.update.bind(this));
+
+        if(localStorage && localStorage.getItem('dbProducts')){
+            this.update(JSON.parse(localStorage.getItem('dbProducts')))
+        }
     }
 
     update(products){

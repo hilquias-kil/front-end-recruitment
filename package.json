@@ -4,6 +4,7 @@
   "description": "## Expected result",
   "main": "index.js",
   "scripts": {
+    "postinstall": "mkdir dist",
     "start": "npm run css-watch & npm run js-watch & npm run server",
     "test": "NODE_ENV=test jest",
     "js": "rollup --config",
@@ -36,6 +37,7 @@
     "eslint": "^4.12.1",
     "jest": "^21.2.1",
     "kouto-swiss": "^1.1.0",
+    "mkdir": "0.0.2",
     "regenerator-runtime": "^0.11.0",
     "rollup": "^0.52.0",
     "rollup-plugin-babel": "^3.0.2",

@@ -70,6 +70,10 @@
         position: relative
         text-align: center
 
+        &.change
+            &:before
+                animation: popup .3s linear;
+
         &:before
             background-color: $highlight-color
             border-radius: 50%
@@ -92,3 +96,11 @@
             list-style: none
             margin: 0
             padding: 0
+
+@keyframes popup
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(2)
+    100%
+        transform: scale(1)

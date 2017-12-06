@@ -16,17 +16,16 @@ const formatInstallments = (item) => {
 
 export default (data) => `
 ${ data.map( item => `
-<li class="product" data-product data-feedback="Selecione o tamanho">
+<li class="product" data-product>
     <div class="img-holder">
         ${item.isFreeShipping ? '<span class="free-shipping">Frete Grátis</span>': ''}
-        <img src="http://via.placeholder.com/180x230" />
+        <img src="/public/img/${item.sku.toString().substr(0, 5)}.jpg" alt="${item.title}" />
     </div>
     <span class="name">${item.title}</span>
     <span class="price">${item.currencyFormat} ${formatPrice(item.price)}</span>
     ${formatInstallments(item)}
     <div class="select">
         <select data-select>
-            <option value="">Selecione o tamanho</option>
             ${item.availableSizes.map( it => `<option value="${it}">${it}</option>` )}
         </select>
     </div>

@@ -6,6 +6,11 @@ class Cart {
         this.data = [];
         this.element = el;
 
+        if(localStorage && localStorage.getItem('dbProducts')){
+            this.data = JSON.parse(localStorage.getItem('dbProducts'))
+            this.render();
+        }
+
         events.subscribe('ADD_CART', this.addProduct.bind(this));
     }
 
@@ -26,11 +31,13 @@ class Cart {
         }
 
         this.render();
+        this.updateStorage();
     }
 
     removeProduct(index){
         this.data.splice(index, 1);
         this.render();
+        this.updateStorage();
     }
 
     render(){
@@ -47,6 +54,12 @@ class Cart {
         [].forEach.call(rm, (el, index) => {
             el.addEventListener('click', this.removeProduct.bind(this, index));
         });
+    }
+
+    updateStorage(){
+        if(localStorage){
+            localStorage.setItem('dbProducts', JSON.stringify(this.data))
+        }
     }
 }
 
